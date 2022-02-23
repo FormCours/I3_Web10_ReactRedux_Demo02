@@ -1,0 +1,15 @@
+li.product {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+ul.productList {
+    list-style: none;
+    margin: 0;
+    width: 80%;
+}
+
+div.containerList {
+}

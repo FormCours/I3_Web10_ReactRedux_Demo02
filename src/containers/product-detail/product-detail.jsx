@@ -1,14 +1,18 @@
+import { useSelector } from "react-redux";
 import PriceDisplay from "../../components/price-display/price-display";
 
-// ↓ Fausse données (Mokup)
-const selectedProduct = {
-    name: 'Je sais pas, product name par exemple',
-    price: 42.1,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent erat lorem, congue a posuere vel, aliquet eu diam. Donec ultrices, ante elementum dignissim placerat, mauris ante pharetra ligula, nec maximus quam velit quis odio.',
-    image: 'images/cat.jpg'
-};
 
 const ProductDetail = () => {
+
+    const selectedProduct = useSelector(s => s.productCategory.selectedProduct)
+
+    if(selectedProduct === null) {
+        return (
+            <div>
+                <h2>Pas de produit selectionné :o</h2>
+            </div> 
+        )
+    }
 
     return (
         <div>

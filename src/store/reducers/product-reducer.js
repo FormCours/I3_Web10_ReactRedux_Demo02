@@ -28,7 +28,8 @@ const initialProductState = {
 }
 
 export const productReducer = (state = initialProductState, action) => {
-
+    console.log(action);
+    
     switch(action.type) {
         case PRODUCT_SELECTION : 
             return {

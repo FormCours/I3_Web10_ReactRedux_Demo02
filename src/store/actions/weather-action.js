@@ -57,8 +57,8 @@ export const searchWeather = (city) => {
 
         }).catch(error => {
             // Déclenche l'action 'ERROR'
-            const errorMessage = (error.response.status === 404) ? 'Ville non trouvé' : 'Requete échoué :(';
-            dispatch(errorMessage(errorMessage));      
+            const message = (error.response && error.response.status === 404) ? 'Ville non trouvé' : 'Requete échoué :(';
+            dispatch(errorWeather(message));      
         })
     }
 }

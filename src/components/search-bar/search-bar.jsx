@@ -12,6 +12,7 @@ const SearchBar = (props) => {
     */
 
     const handleSearch = (data) => {
+        console.log(data);
         props.onResult(data.content);
         reset();
     }

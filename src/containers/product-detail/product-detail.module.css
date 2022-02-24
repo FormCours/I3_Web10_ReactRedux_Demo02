@@ -1,0 +1,5 @@
+.productDetail img {
+    width: 80%;
+    object-fit: contain;
+    height: 400px;
+}

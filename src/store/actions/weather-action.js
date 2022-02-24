@@ -1,7 +1,6 @@
 import axios from "axios";
 
 // Les types d'actions possible (Géré par le reducer)
-export const WEATHER_SEARCH = 'weather/search';
 export const WEATHER_LOADING = 'weather/loading';
 export const WEATHER_RESULT = 'weather/result';
 export const WEATHER_ERROR = 'weather/error';
@@ -29,6 +28,7 @@ export const resultWeather = (result) => ({
 
 // Méthode pour rechercher la météo via axios (necessite Redux-thunk)
 export const searchWeather = (city) => {
+
     // Envoie d'une fonction qui sera traité via Redux-Thunk
     return (dispatch) => {
         //   ↑ La variable "dispatch" permet à Redux-Thunk de déclancher des actions
@@ -36,7 +36,7 @@ export const searchWeather = (city) => {
         // Test de garde
         if (!city) {
             // Déclenche l'action 'ERROR'
-            dispatch(errorWeather('Ville non défini !'));
+            dispatch(errorWeather('Ville recherché non défini !'));
             return;
         }
        
@@ -60,6 +60,5 @@ export const searchWeather = (city) => {
             const errorMessage = (error.response.status === 404) ? 'Ville non trouvé' : 'Requete échoué :(';
             dispatch(errorMessage(errorMessage));      
         })
-
     }
 }

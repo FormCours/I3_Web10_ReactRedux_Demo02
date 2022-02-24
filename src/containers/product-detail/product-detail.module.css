@@ -1,5 +1,5 @@
 .productDetail img {
     width: 80%;
-    object-fit: contain;
-    height: 400px;
+    object-fit: cover;
+    min-height: 500px;
 }

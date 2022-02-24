@@ -6,3 +6,7 @@ npm install redux react-redux prop-types axios nanoid
 
  • Pour faire facilement un formulaire
 npm install react-hook-form
+
+ • Pour ajouter le middleware "redux-thunk"
+   => Permet que le store gere des fonctions
+npm install redux-thunk

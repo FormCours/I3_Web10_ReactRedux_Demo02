@@ -1,4 +1,5 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import reduxThunk from 'redux-thunk';
 
 // Importation des reducers qu'on à générer
 import { productReducer } from "./reducers/product-reducer";
@@ -10,7 +11,8 @@ const reducer = combineReducers({
 });
 
 // Création du store, sur base du reducer global
-const store = createStore(reducer);
+// => Ajout du middleware "redux-thunk"
+const store = createStore(reducer, applyMiddleware(reduxThunk));
 
 // Exporter le store, qui sera par la suite diffuser dans l'app !!!
 export default store;
